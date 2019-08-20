@@ -82,6 +82,7 @@ int main(int argc, char ** argv){
   cublasHandle_t handle;
 
   checkCublas(cublasCreate(&handle));
+  checkCublas(cublasSetMathMode(handle, CUBLAS_TENSOR_OP_MATH));
 
   if(verbose) cout << "allocating device variables" << endl;
   
